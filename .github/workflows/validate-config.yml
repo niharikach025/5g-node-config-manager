@@ -1,0 +1,15 @@
+name: Validate Configs
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate-configs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Run config validation script
+        run: bash scripts/config-check.sh
